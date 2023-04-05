@@ -1,0 +1,75 @@
+@use "../../styles/partials/mixins" as *;
+
+@use "../../styles/partials/variables" as *;
+
+//gutters mean gaps
+//margin is margin left and right (not up and down)
+//padding is for between components and above/below headers
+
+.main{
+
+
+
+&__currentvideo{
+
+
+}
+
+
+&__videotitle {
+font-weight:700;
+font-size: 1.5rem;
+line-height: 2rem;
+
+    @include tablet{
+font-size: 2.063rem; 
+line-height: 2.75rem; 
+
+    }
+}
+
+&__videoauthor{
+font-weight:700; 
+font-size: 0.813rem; 
+line-height: 7.875rem; 
+
+@include tablet{
+font-size: 0.875rem; 
+line-height: 1.375rem;
+}
+
+}
+
+&__videodate{
+
+}
+
+&__views{
+
+}
+
+&__likes{
+
+}
+
+&__description{
+    
+        font-weight:400; 
+        font-size: 0.813rem; 
+        line-height: 7.875rem; 
+        
+        @include tablet{
+        font-size: 0.875rem; 
+        line-height: 1.375rem;
+        }
+        
+        }
+}
+
+
+.divider {
+    border-bottom: solid;
+    border-bottom-width:0.063rem;
+    border-bottom-color:$secondary-color-3;
+    
+ }

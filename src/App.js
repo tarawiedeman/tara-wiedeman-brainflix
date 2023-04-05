@@ -1,12 +1,18 @@
-import './App.css';
-import Header from "./components/Header"
+import './App.scss';
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
+import Comments from "./components/Comments/Comments";
+import VideoDetails from './data/video-details.json';
+
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header/>
-      Hello world! 
-    </div>
+      <Main/>
+      <Comments/>
+      
+    </>
   );
 }
 

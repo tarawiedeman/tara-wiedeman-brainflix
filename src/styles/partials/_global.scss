@@ -1,0 +1,23 @@
+
+@use "./mixins" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Avenir Next", "Arial", "Open Sans";
+  margin: 0rem;
+  padding-left:1rem;
+  padding-right:1rem;
+
+  @include tablet {
+    padding-left:2.25rem;
+    padding-right:2.25rem;
+  }
+}
+//tried to move button styling here but I can't figure out the errors 
+
+
