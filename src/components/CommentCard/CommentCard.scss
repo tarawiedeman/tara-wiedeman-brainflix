@@ -4,12 +4,25 @@
 
 .commentcard{
 
+    display:flex;
+    flex-direction:column;
+
+
+    &__container{
+        display:flex;
+        flex-direction:row;
+        align-items: space-between;
+    }
+
+
+
     &__avatar{
         width: 2.25rem;
         height: 2.25rem;
         border-radius:50%;
         padding:1.2rem;
         background-color: $primary-color-3;
+        float:left;
         
         @include tablet{
             width:2.5rem;
@@ -20,9 +33,28 @@
 
     &__subheader{
 
+        font-size:13px;
+        line-height:18px;
+        font-weight:700;
+        color:$secondary-color-1;
+
+    }
+
+    &__subheader--grey{
+        font-size:13px;
+        line-height:18px;
+        font-weight:400;
+        color:$primary-color-3;
     }
 
     &__commenttext{
+
+        font-size:13px;
+        line-height:18px;
+        font-weight:400;
+        color:$primary-color-1;
+
+
 
     }
 }
