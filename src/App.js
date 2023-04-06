@@ -1,27 +1,23 @@
-import './App.scss';
+import "./App.scss";
 import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
-import Comments from "./components/Comments/Comments";
-import VideoDetails from './data/video-details.json';
-import Videos from '../../data/videos.json';
+import CurrentVideo from "./components/CurrentVideo/CurrentVideo";
+import PreviewCard from "./components/PreviewCard/PreviewCard";
+import videoDetails from "./data/video-details.json";
 import { useState } from "react";
 
-
 function App() {
-//does this function just want to store the video object for the main video and then pass that as props? 
-//or should it store and pass the full array? 
-
-const [VideosArray, setVideo] = useState([VideoDetails]);
-
-const [VideoImages,setVideoImage] = useState([Videos]);
+  const [currentVideoDetails, setVideoDetails] = useState(videoDetails[0]);
 
   return (
     <>
-      <Header/>
-      <Main/>
-      <Comments VideosArray={VideoData}/>
-      <NextVideos VideoImages={VideoImageData}/>
-      
+      <Header />
+      <CurrentVideo video={currentVideoDetails} />
+      <h3 className="video__header">Next Videos</h3>
+      {videoDetails.map((oneVideo) => {
+        return (
+          <PreviewCard video={oneVideo} setVideoDetails={setVideoDetails} key={oneVideo.id}/>
+        );
+      })}
     </>
   );
 }

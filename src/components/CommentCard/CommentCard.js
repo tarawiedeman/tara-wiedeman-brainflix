@@ -1,24 +1,16 @@
 import "./CommentCard.scss";
-import AvatarImage from '../../assets/images/Mohan-muruge.jpg';
-import VideoDetails from '../../data/video-details.json';
+import AvatarImage from "../../assets/images/Mohan-muruge.jpg";
 
-function CommentCard (props) {
-    console.log(props);
-    return(<div className="commentcard"> 
-    <div class="divider"></div>
-    <img className="commentcard__avatar"
-    src={AvatarImage}
-    alt="avatarimage"/>
-    <div className="commentcard__container">
-    <h3 className="commentcard__subheader">{props.comments.name}</h3>
-    <h3 className="commentcard__subheader--grey">{props.comments.date}</h3>
+function CommentCard({ commentcard }) {
+  
+  return (
+    <div className="commentcard">
+      <img className="avatar" src={AvatarImage} alt="avatarimage" />
+      <h3 className="commentcard__name">{commentcard.name}</h3>
+      <h3 className="commentcard__date">{commentcard.timestamp}</h3>
+      <h3 className="commentcard__comment">{commentcard.comment}</h3>
     </div>
-    <p className="commentcard__commenttext">{props.comments.comment}</p>
-    <div class="divider"></div>
-    </div> 
-    
-    );
-
+  );
 }
 
 export default CommentCard;

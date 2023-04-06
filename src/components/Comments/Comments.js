@@ -14,7 +14,7 @@ function Comments(props) {
     // comments still need to be rendered dynamically (data coming from comments property of the main-video object stored in state).
     return (
         <div className="comments">
-        <div className="comments__count">{CommentCardList.length} Comments</div>
+        <div className="comments__count">{props.videoDetails.length + 'Comments'}</div>
         <img className="avatar"
         src={AvatarImage}
         alt="avatarimage"/>
@@ -42,7 +42,7 @@ function Comments(props) {
         
         }
        
-        <div class="divider"></div>
+        <div className="divider"></div>
         </div>
     );
 }
