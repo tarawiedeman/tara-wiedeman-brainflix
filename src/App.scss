@@ -1,2 +1,16 @@
+@use "./styles/partials/mixins" as *;
 
+@use "./styles/partials/variables" as *;
 
+.video__header{
+    font-size:0.75rem;
+    line-height:1.5rem;
+    color:$primary-color-3;
+    margin:1rem;
+
+    @include tablet{
+        margin:1.5rem;
+        
+    }
+
+}

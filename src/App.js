@@ -16,7 +16,7 @@ function App() {
       {videoDetails.map((oneVideo) => {
         return (
           <PreviewCard video={oneVideo} setVideoDetails={setVideoDetails} key={oneVideo.id}/>
-        );
+          );
       })}
     </>
   );
