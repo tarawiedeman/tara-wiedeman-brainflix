@@ -2,6 +2,19 @@
 
 @use "./styles/partials/variables" as *;
 
+.app{
+    position:relative;
+}
+.previewvideos__container{
+    display:flex;
+    flex-direction: column;
+    position:absolute;
+    top:30rem;
+    right:0rem;
+  
+   
+}
+
 .video__header{
     font-size:0.75rem;
     line-height:1.5rem;
