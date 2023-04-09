@@ -25,7 +25,6 @@ function CurrentVideo (props) {
       <div className="main__videolikes"> <div>{video.likes}</div></div>
       </div>
       </div>
-      <div className="divider"></div>
       <p className="main__videodescription">{video.description}</p>
       </div>
       <div className="comments">
