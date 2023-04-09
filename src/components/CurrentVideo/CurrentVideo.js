@@ -4,7 +4,12 @@ import CommentCard from "../CommentCard/CommentCard";
 
 function CurrentVideo (props) {
  const video=props.video;
- console.log(video);
+ 
+    var adjustedDate = new Date(video.timestamp);
+    var month = adjustedDate.getUTCMonth() + 1;
+    var day = adjustedDate.getUTCDate();
+    var year = adjustedDate.getUTCFullYear();
+    var fullDate = month + "/" + day + "/" + year;
    
     return <div className="main">
       <video className="main__currentvideo" poster={video.image} src={video.video} controls></video>
@@ -13,11 +18,11 @@ function CurrentVideo (props) {
       <div className="main__rowcontainer">
       <div className="main__columncontainer">
       <h2 className="main__videoauthor">{'By' + ' ' + video.channel}</h2>
-      <h3 className="main__videodate">{video.timestamp}</h3>
+      <h3 className="main__videodate">{fullDate}</h3>
       </div>
-      <div className="main__columncontainer">
-      <div className="main__videoviews"><img src="../../assets/images/views.svg" alt="views"/> <div>{video.views}</div></div>
-      <div className="main__videolikes"><img src="../../assets/images/likes.svg" alt="likes"/> <div>{video.likes}</div></div>
+      <div className="main__social">
+      <div className="main__videoviews"><div>{video.views}</div></div>
+      <div className="main__videolikes"> <div>{video.likes}</div></div>
       </div>
       </div>
       <div className="divider"></div>

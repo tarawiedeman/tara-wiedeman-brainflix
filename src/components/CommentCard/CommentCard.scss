@@ -4,12 +4,14 @@
 
 .commentcard{
 
+    margin:1rem;
     display:flex;
     flex-direction:column;
-    border-top:1px solid $secondary-color-3;
-    border-bottom:1px solid $secondary-color-3;
+    border-top:0.063rem solid $secondary-color-3;
+    // border-bottom:0.063rem solid $secondary-color-3;
     padding-top:1rem;
     padding-bottom:1rem;
+    
 
     @include tablet{
     padding-top:1.5rem;
@@ -18,7 +20,9 @@
 
     @include desktop{
         margin-left:10%;
-        margin-right:30%;
+        flex-wrap:wrap;
+        width:50%;
+        position:relative;
     }
 
 
@@ -72,10 +76,10 @@
         line-height:18px;
         font-weight:400;
         color:$primary-color-3;
+        position:absolute;
+        right:1rem;
         
-        @include desktop{
-            margin-left:50%;
-        }
+       
     }
 
     &__comment{
@@ -88,6 +92,10 @@
 
         @include tablet{
             margin-left:4rem;
+        }
+
+        @include desktop{
+            width:90%;
         }
 
 

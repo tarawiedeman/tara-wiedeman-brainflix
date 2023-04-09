@@ -13,7 +13,7 @@ function App() {
       <Header />
       <CurrentVideo video={currentVideoDetails} />
       <div className="previewvideos__container">
-      <h3 className="video__header">Next Videos</h3>
+      <h3 className="video__header">NEXT VIDEOS</h3>
       {videoDetails.map((oneVideo) => {
         return (
           <PreviewCard video={oneVideo} setVideoDetails={setVideoDetails} key={oneVideo.id}/>
