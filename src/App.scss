@@ -2,49 +2,42 @@
 
 @use "./styles/partials/variables" as *;
 
-.app{
-    position:relative;
+.app {
+  position: relative;
 }
-.previewvideos__container{
-
-    @include tablet{
-        margin-left:2.25rem;
-        margin-right:2.25rem;
-        margin-bottom:2.25rem;
-        margin-top:0rem;
-    }
-    @include desktop{
-    display:flex;
+.previewvideos__container {
+  @include tablet {
+    margin-left: 2.25rem;
+    margin-right: 2.25rem;
+    margin-bottom: 2.25rem;
+    margin-top: 0rem;
+  }
+  @include desktop {
+    display: flex;
     flex-direction: column;
-    position:absolute;
-    top:30rem;
-    right:0rem;
-    border-left:0.063rem solid $secondary-color-3;
-    margin-top:1rem;
-    margin-right:10%;}
-  
-   
+    position: absolute;
+    top: 30rem;
+    right: 0rem;
+    border-left: 0.063rem solid $secondary-color-3;
+    margin-top: 1rem;
+    margin-right: 10%;
+  }
 }
 
-.video__header{
-    font-size:0.75rem;
-    line-height:1.25rem;
-    color:$primary-color-3;
-    margin:1rem;
-    padding-top:2rem;
-    font-weight:700;
-    border-top:0.063rem solid $secondary-color-3;
+.video__header {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: $primary-color-3;
+  margin: 1rem;
+  padding-top: 2rem;
+  font-weight: 700;
+  border-top: 0.063rem solid $secondary-color-3;
 
+  @include tablet {
+    margin-top: 0rem;
+  }
 
-    @include tablet{
-        margin-top:0rem;
-        
-        
-    }
-
-    @include desktop {
-
-        border-top:none;
-    }
-
+  @include desktop {
+    border-top: none;
+  }
 }

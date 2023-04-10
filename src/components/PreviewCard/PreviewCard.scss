@@ -2,81 +2,73 @@
 
 @use "../../styles/partials/variables" as *;
 
-.video{
+.video {
+  @include desktop {
+    // position:absolute;
+    // right:0rem;
+    // top:30%;
+  }
 
-@include desktop{
+  &__previewcard {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    align-items: center;
 
-// position:absolute;
-// right:0rem;
-// top:30%;
+    @include tablet {
     }
+  }
 
-&__previewcard{
-display:flex;
-flex-direction: row;
-margin:1rem;
-align-items:center;
-
-
-@include tablet{
-    
-}
-    
-}
-
-&__columncontainer{
-    display:flex;
+  &__columncontainer {
+    display: flex;
     flex-direction: column;
-    max-width:8rem;
+    max-width: 8rem;
 
-    @include tablet{
-    max-width:15rem;
+    @include tablet {
+      max-width: 15rem;
     }
-}
+  }
 
-&__title{
-font-size:13px;
-line-height:18px;
-font-weight:700;
-color:$primary-color-1;
-margin-left:1rem;
-display:flex;
-flex-wrap: wrap;
+  &__title {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 700;
+    color: $primary-color-1;
+    margin-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
 
-@include tablet{
-font-size:14px;
-line-height:22px;
-margin-left:1.5rem;
-}
-
-}
-
-&__author{
-    font-size:13px;
-    line-height:18px;
-    font-weight:400;
-    color:$primary-color-1;
-    margin-left:1rem;
-    margin-top:0rem;
-
-    @include tablet{
-    font-size:14px;
-    line-height:22px;
-    margin-left:1.5rem;
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+      margin-left: 1.5rem;
     }
-}
+  }
 
-&__image{
-border-radius:4px;
-background-color: $secondary-color-3;
-height:4rem;
-width:6.5rem;
+  &__author {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $primary-color-1;
+    margin-left: 1rem;
+    margin-top: 0rem;
 
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+      margin-left: 1.5rem;
+    }
+  }
 
-@include tablet{
-    width:12rem;
-    height:8rem;
+  &__image {
+    border-radius: 4px;
+    background-color: $secondary-color-3;
+    height: 4rem;
+    width: 6.5rem;
 
-}
-}
+    @include tablet {
+      width: 12rem;
+      height: 8rem;
+    }
+  }
 }

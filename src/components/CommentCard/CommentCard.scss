@@ -2,114 +2,96 @@
 
 @use "../../styles/partials/variables" as *;
 
-.commentcard{
+.commentcard {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-top: 0.063rem solid $secondary-color-3;
+  // border-bottom:0.063rem solid $secondary-color-3;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 
-    margin:1rem;
-    display:flex;
-    flex-direction:column;
-    border-top:0.063rem solid $secondary-color-3;
-    // border-bottom:0.063rem solid $secondary-color-3;
-    padding-top:1rem;
-    padding-bottom:1rem;
-    
+  @include tablet {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-left: 2.25rem;
+    margin-right: 2.25rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
 
-    @include tablet{
-    padding-top:1.5rem;
-    padding-bottom:1.5rem;
-    margin-left:2.25rem;
-    margin-right:2.25rem;
-    margin-top:0rem;
-    margin-bottom:0rem;
+  @include desktop {
+    margin-left: 10%;
+    flex-wrap: wrap;
+    width: 50%;
+    position: relative;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+  }
+
+  &__avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    padding: 1.3rem;
+    background-color: $secondary-color-3;
+    float: left;
+    margin-right: 1rem;
+
+    @include tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 1.5rem;
     }
-    
+  }
 
-    @include desktop{
-        margin-left:10%;
-        flex-wrap:wrap;
-        width:50%;
-        position:relative;
+  &__columncontainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__rowcontainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__name {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 700;
+    color: $secondary-color-1;
+  }
+
+  &__date {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $primary-color-3;
+    position: absolute;
+    right: 1rem;
+
+    @include tablet {
+      right: 3rem;
     }
+  }
 
+  &__comment {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $primary-color-1;
+    margin-left: 3.5rem;
 
-    &__container{
-        display:flex;
-        flex-direction:row;
-        align-items: space-between;
-    }
-
-
-
-    &__avatar{
-        width: 2.25rem;
-        height: 2.25rem;
-        border-radius:50%;
-        padding:1.3rem;
-        background-color: $secondary-color-3;
-        float:left;
-        margin-right:1rem;
-        
-        @include tablet{
-            width:2.5rem;
-            height:2.5rem;
-            margin-right:1.5rem;
-        }
-
-    }
-
-    &__columncontainer{
-
-        display:flex;
-        flex-direction:column;
-    }
-
-    &__rowcontainer{
-        display:flex;
-        flex-direction:row;
-    }
-
-    &__name{
-
-        font-size:13px;
-        line-height:18px;
-        font-weight:700;
-        color:$secondary-color-1;
-
-    }
-
-    &__date{
-        font-size:13px;
-        line-height:18px;
-        font-weight:400;
-        color:$primary-color-3;
-        position:absolute;
-        right:1rem;
-
-        @include tablet{
-            right:3rem;
-        }
-        
-       
-    }
-
-    &__comment{
-
-        font-size:13px;
-        line-height:18px;
-        font-weight:400;
-        color:$primary-color-1;
-        margin-left:3.5rem;
-
-        @include tablet{
-            margin-left:4rem;
-        }
-
-        @include desktop{
-            width:90%;
-        }
-
-
-
+    @include tablet {
+      margin-left: 4rem;
     }
 
-   
+    @include desktop {
+      width: 90%;
+    }
+  }
 }
