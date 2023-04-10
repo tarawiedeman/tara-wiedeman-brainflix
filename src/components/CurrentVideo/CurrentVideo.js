@@ -22,7 +22,7 @@ function CurrentVideo (props) {
       </div>
       <div className="main__social">
       <div className="main__videoviews"><div>{video.views}</div></div>
-      <div className="main__videolikes"> <div>{video.likes}</div></div>
+      <div className="main__videolikes"> <div>{video.likes} </div></div>
       </div>
       </div>
       <p className="main__videodescription">{video.description}</p>

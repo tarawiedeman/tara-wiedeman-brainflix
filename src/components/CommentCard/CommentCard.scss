@@ -16,7 +16,12 @@
     @include tablet{
     padding-top:1.5rem;
     padding-bottom:1.5rem;
+    margin-left:2.25rem;
+    margin-right:2.25rem;
+    margin-top:0rem;
+    margin-bottom:0rem;
     }
+    
 
     @include desktop{
         margin-left:10%;
@@ -78,6 +83,10 @@
         color:$primary-color-3;
         position:absolute;
         right:1rem;
+
+        @include tablet{
+            right:3rem;
+        }
         
        
     }
