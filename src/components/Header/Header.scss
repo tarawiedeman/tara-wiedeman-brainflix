@@ -69,20 +69,21 @@
   }
 
   &__button {
-    background-image: url(../../assets/images/upload.svg);
-    background-repeat: no-repeat;
-    background-size: 1.5rem;
-    background-position: 0.938rem 0.313rem;
-    font-family: Avenir Next;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content: center;
+    gap:0.5rem;
     background-color: $primary-color-2;
     color: $primary-color-4;
     font-weight: 700;
-    font-family: Avenir;
+    font-family: Avenir Next;
     border: none;
     height: 2.5rem;
     width: auto;
     border-radius: 0.25rem;
     margin-bottom: 1rem;
+    padding:0.25rem;
 
     @include tablet {
       margin-top: 1.5rem;
@@ -91,6 +92,8 @@
       padding-right: 2rem;
       margin-bottom: 1.5rem;
     }
+
+
   }
 
   @include desktop {

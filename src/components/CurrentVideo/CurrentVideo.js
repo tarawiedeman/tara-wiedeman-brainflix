@@ -1,6 +1,9 @@
 import "./CurrentVideo.scss";
 import AvatarImage from "../../assets/images/Mohan-muruge.jpg";
 import CommentCard from "../CommentCard/CommentCard";
+import ViewsImage from "../../assets/images/views.svg";
+import LikesImage from "../../assets/images/likes.svg";
+import AddCommentImage from "../../assets/images/add_comment.svg"
 
 function CurrentVideo(props) {
   const video = props.video;
@@ -28,10 +31,11 @@ function CurrentVideo(props) {
           </div>
           <div className="main__social">
             <div className="main__videoviews">
+              <img className="main_videoviews--image" src={ViewsImage} width="25rem"/>
               <div>{video.views}</div>
             </div>
             <div className="main__videolikes">
-              {" "}
+              <img className="main_videolikes--image" src={LikesImage}/>
               <div>{video.likes} </div>
             </div>
           </div>
@@ -51,7 +55,7 @@ function CurrentVideo(props) {
               placeholder="Add a new comment"
             ></textarea>
           </div>
-          <button className="comments__button">COMMENT</button>
+          <button className="comments__button"><img src={AddCommentImage}/> COMMENT</button>
         </div>
       </div>
 
