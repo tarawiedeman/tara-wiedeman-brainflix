@@ -5,10 +5,16 @@ import ViewsImage from "../../assets/images/views.svg";
 import LikesImage from "../../assets/images/likes.svg";
 import AddCommentImage from "../../assets/images/add_comment.svg"
 
-function CurrentVideo(props) {
-  const video = props.video;
+//the component below renders the main video image and details and the comments form
+//below I need to get api request data for video id from clicked video and use it to render 
+//video details info
 
-  var adjustedDate = new Date(video.timestamp);
+//wait for id to be returned, otherwise grab it from the URL ? 
+
+function CurrentVideo({currentVideo}) {
+
+
+  var adjustedDate = new Date(currentVideo.timestamp);
   var month = adjustedDate.getUTCMonth() + 1;
   var day = adjustedDate.getUTCDate();
   var year = adjustedDate.getUTCFullYear();
@@ -18,33 +24,33 @@ function CurrentVideo(props) {
     <div className="main">
       <video
         className="main__currentvideo"
-        poster={video.image}
-        src={video.video}
+        poster={currentVideo.image}
+        src={currentVideo.video}
         controls
       ></video>
       <div className="main__videodetails">
-        <h1 className="main__videotitle">{video.title}</h1>
+        <h1 className="main__videotitle">{currentVideo.title}</h1>
         <div className="main__rowcontainer">
           <div className="main__columncontainer">
-            <h2 className="main__videoauthor">{"By" + " " + video.channel}</h2>
+            <h2 className="main__videoauthor">{"By" + " " + currentVideo.channel}</h2>
             <h3 className="main__videodate">{fullDate}</h3>
           </div>
           <div className="main__social">
             <div className="main__videoviews">
               <img className="main_videoviews--image" src={ViewsImage} width="25rem"/>
-              <div>{video.views}</div>
+              <div>{currentVideo.views}</div>
             </div>
             <div className="main__videolikes">
               <img className="main_videolikes--image" src={LikesImage}/>
-              <div>{video.likes} </div>
+              <div>{currentVideo.likes} </div>
             </div>
           </div>
         </div>
-        <p className="main__videodescription">{video.description}</p>
+        <p className="main__videodescription">{currentVideo.description}</p>
       </div>
       <div className="comments">
         <div className="comments__count">
-          {video.comments.length + " " + "Comments"}
+          {currentVideo.comments.length + " " + "Comments"}
         </div>
         <img className="comments__avatar" src={AvatarImage} alt="avatarimage" />
         <div className="comments__rowcontainer">
@@ -58,13 +64,13 @@ function CurrentVideo(props) {
           <button className="comments__button"><img src={AddCommentImage}/> COMMENT</button>
         </div>
       </div>
-
-      {/* below code should take a comment object from comments array and make a comment card out of it (for each object) */}
-      {video.comments.map((commentcard) => (
+    
+        {currentVideo.comments.map((commentcard) => (
         <CommentCard commentcard={commentcard} key={commentcard.id} />
       ))}
     </div>
   );
-}
+} 
+
 
 export default CurrentVideo;

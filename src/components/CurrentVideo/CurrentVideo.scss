@@ -256,6 +256,8 @@
   &__input {
     font-family: Avenir Next;
     font-weight: 400;
+    color:$primary-color-1;
+    background-color: $secondary-color-4;
     height: 2.25rem;
     width: 100%;
     padding: 3rem;
@@ -338,7 +340,7 @@
   text-align: start;
 }
 
-.comments__button :hover {
+.comments__button:hover {
   background-color: $secondary-color-2;
   color: white;
 }
