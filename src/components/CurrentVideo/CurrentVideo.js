@@ -3,17 +3,9 @@ import AvatarImage from "../../assets/images/Mohan-muruge.jpg";
 import CommentCard from "../CommentCard/CommentCard";
 import ViewsImage from "../../assets/images/views.svg";
 import LikesImage from "../../assets/images/likes.svg";
-import AddCommentImage from "../../assets/images/add_comment.svg"
+import AddCommentImage from "../../assets/images/add_comment.svg";
 
-//the component below renders the main video image and details and the comments form
-//below I need to get api request data for video id from clicked video and use it to render 
-//video details info
-
-//wait for id to be returned, otherwise grab it from the URL ? 
-
-function CurrentVideo({currentVideo}) {
-
-
+function CurrentVideo({ currentVideo }) {
   var adjustedDate = new Date(currentVideo.timestamp);
   var month = adjustedDate.getUTCMonth() + 1;
   var day = adjustedDate.getUTCDate();
@@ -32,16 +24,22 @@ function CurrentVideo({currentVideo}) {
         <h1 className="main__videotitle">{currentVideo.title}</h1>
         <div className="main__rowcontainer">
           <div className="main__columncontainer">
-            <h2 className="main__videoauthor">{"By" + " " + currentVideo.channel}</h2>
+            <h2 className="main__videoauthor">
+              {"By" + " " + currentVideo.channel}
+            </h2>
             <h3 className="main__videodate">{fullDate}</h3>
           </div>
           <div className="main__social">
             <div className="main__videoviews">
-              <img className="main_videoviews--image" src={ViewsImage} width="25rem"/>
+              <img
+                className="main_videoviews--image"
+                src={ViewsImage}
+                width="25rem"
+              />
               <div>{currentVideo.views}</div>
             </div>
             <div className="main__videolikes">
-              <img className="main_videolikes--image" src={LikesImage}/>
+              <img className="main_videolikes--image" src={LikesImage} />
               <div>{currentVideo.likes} </div>
             </div>
           </div>
@@ -61,16 +59,17 @@ function CurrentVideo({currentVideo}) {
               placeholder="Add a new comment"
             ></textarea>
           </div>
-          <button className="comments__button"><img src={AddCommentImage}/> COMMENT</button>
+          <button className="comments__button">
+            <img src={AddCommentImage} /> COMMENT
+          </button>
         </div>
       </div>
-    
-        {currentVideo.comments.map((commentcard) => (
+
+      {currentVideo.comments.map((commentcard) => (
         <CommentCard commentcard={commentcard} key={commentcard.id} />
       ))}
     </div>
   );
-} 
-
+}
 
 export default CurrentVideo;

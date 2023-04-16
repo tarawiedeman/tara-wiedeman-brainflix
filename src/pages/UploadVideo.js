@@ -1,18 +1,11 @@
- import Upload from "../components/Upload/Upload";
+import Upload from "../components/Upload/Upload";
 
- function UploadVideo () {
+function UploadVideo() {
+  return (
+    <>
+      <Upload />
+    </>
+  );
+}
 
-    return (
-
-        <>
-        <Upload/>
-
-
-        </>
-    );
-
- }
-
- export default UploadVideo;
-
-
+export default UploadVideo;
