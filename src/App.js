@@ -1,30 +1,23 @@
 import "./App.scss";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header/Header";
-import CurrentVideo from "./components/CurrentVideo/CurrentVideo";
-import PreviewCard from "./components/PreviewCard/PreviewCard";
-import videoDetails from "./data/video-details.json";
-import { useState } from "react";
+import Home from "./pages/Home";
+import UploadVideo from "./pages/UploadVideo";
+import NotFound from "./pages/NotFound";
 
 function App() {
-  const [currentVideoDetails, setVideoDetails] = useState(videoDetails[0]);
-
   return (
-    <div className="app">
+    <BrowserRouter>
       <Header />
-      <CurrentVideo video={currentVideoDetails} />
-      <div className="previewvideos__container">
-        <h3 className="video__header">NEXT VIDEOS</h3>
-        {videoDetails.map((oneVideo) => {
-          return (
-            <PreviewCard
-              video={oneVideo}
-              setVideoDetails={setVideoDetails}
-              key={oneVideo.id}
-            />
-          );
-        })}
-      </div>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Navigate to="/" />} />
+        <Route path="/:id" element={<Home />} />
+        <Route path="/upload" element={<UploadVideo />} />
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
