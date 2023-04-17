@@ -1,0 +1,234 @@
+@use "../../styles/partials/mixins" as *;
+
+@use "../../styles/partials/variables" as *;
+
+.upload {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    margin: 2.25rem;
+  }
+
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  &__header {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: $primary-color-1;
+    border-bottom: none;
+
+    @include tablet {
+      font-size: 2.063rem;
+      line-height: 2.75rem;
+      border-bottom: 1px solid $secondary-color-3;
+      padding-bottom: 1.5rem;
+      margin-top: 0rem;
+    }
+  }
+
+  &__uploadcontainer {
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__thumbnailcontainer {
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__subheader {
+    font-size: 0.813rem;
+    line-height: 1.125rem;
+    font-weight: 700;
+    color: $primary-color-3;
+    margin-left: 0rem;
+    margin-bottom: 0.25rem;
+    margin-top: 1rem;
+
+    @include tablet {
+      font-size: 0.938rem;
+      margin-left: 0rem;
+      margin-bottom: 0.25rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &__image {
+    border-radius: 0.25rem;
+    background-color: $secondary-color-3;
+    max-width: 18rem;
+
+    @include tablet {
+      max-width: 25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @include desktop {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__formcontainer {
+    border-bottom: none;
+
+    @include tablet {
+      border-bottom: 1px solid $secondary-color-3;
+      width: 100%;
+    }
+
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__input--text {
+    font-family: Avenir Next;
+    background-color: $secondary-color-4;
+    font-weight: 400;
+    height: 2.25rem;
+    width: 100%;
+    padding: 1rem;
+    border: solid;
+    border-color: $secondary-color-3;
+    border-radius: 0.25rem;
+    border-width: 0.063rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+
+    @include tablet {
+      height: 2.5rem;
+      width: 100%;
+      padding: 1rem;
+      margin-top: 0rem;
+      margin-bottom: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__input--textarea {
+    font-family: Avenir Next;
+    font-weight: 400;
+    background-color: $secondary-color-4;
+    height: 2.25rem;
+    width: 100%;
+    padding: 3rem;
+    border: solid;
+    border-color: $secondary-color-3;
+    border-radius: 0.25rem;
+    border-width: 0.063rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+
+    @include tablet {
+      height: 2.5rem;
+      width: 100%;
+      padding: 4rem;
+      margin-top: 0rem;
+      margin-bottom: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__buttoncontainer {
+    @include tablet {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    @include desktop {
+      flex-direction: row-reverse;
+      gap: 0.2rem;
+      margin: 1.5rem;
+    }
+  }
+  &__button--publish {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5rem;
+    background-color: $primary-color-2;
+    color: $primary-color-4;
+    font-weight: 700;
+    font-family: Avenir Next;
+    border: none;
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    padding: 0.25rem;
+
+    @include tablet {
+      margin-top: 1.5rem;
+      width: 9.375rem;
+      padding-left: 0.25rem;
+      padding-right: 2rem;
+      margin-bottom: 1.5rem;
+      gap: 1.5rem;
+    }
+  }
+
+  &__button--cancel {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    font-family: Avenir Next;
+    font-weight: 700;
+    background-color: $primary-color-4;
+    color: $primary-color-2;
+    border: none;
+    height: 2.5rem;
+    width: 15rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      width: 9.375rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @include desktop {
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+.upload__input--text::placeholder {
+  color: $primary-color-3;
+  text-align: start;
+}
+
+.upload__button:hover {
+  background-color: $secondary-color-2;
+  color: white;
+}

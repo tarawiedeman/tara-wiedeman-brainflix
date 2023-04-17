@@ -8,6 +8,7 @@
   flex-direction: column;
   padding-left: 1rem;
   padding-right: 1rem;
+  border-bottom: 1px solid $secondary-color-3;
 
   @include tablet {
     display: flex;
@@ -18,7 +19,7 @@
   }
 
   @include desktop {
-    margin: auto;
+    // margin: auto;
     justify-content: space-between;
     gap: 3.938rem;
   }
@@ -29,18 +30,24 @@
     width: 7.5rem;
     margin-top: 1rem;
     display: flex;
-    align-self: center;
+    flex-direction: column;
 
     @include tablet {
       margin-bottom: 1.5rem;
+      align-self: center;
+      margin-top: 2rem;
+    }
+
+    @include desktop {
+      margin-left: 30%;
     }
   }
 
   &__search {
     background-image: url(../../assets/images/search.svg);
     background-repeat: no-repeat;
-    background-size: 1.5rem;
-    background-position: 2px 3px;
+    background-size: 1rem;
+    background-position: 10px 10px;
     font-family: Avenir Next;
     font-weight: 400;
     height: 2.25rem;
@@ -69,27 +76,33 @@
   }
 
   &__button {
-    background-image: url(../../assets/images/upload.svg);
-    background-repeat: no-repeat;
-    background-size: 1.5rem;
-    background-position: 0.938rem 0.313rem;
-    font-family: Avenir Next;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5rem;
     background-color: $primary-color-2;
     color: $primary-color-4;
     font-weight: 700;
-    font-family: Avenir;
+    font-family: Avenir Next;
     border: none;
     height: 2.5rem;
-    width: auto;
+    width: 100%;
     border-radius: 0.25rem;
     margin-bottom: 1rem;
+    padding: 0.25rem;
 
     @include tablet {
       margin-top: 1.5rem;
       width: 9.375rem;
-      padding-left: 2rem;
       padding-right: 2rem;
       margin-bottom: 1.5rem;
+      margin-right: 1.5rem;
+      gap: 1rem;
+    }
+
+    @include desktop {
+      margin-right: 5rem;
     }
   }
 
@@ -106,6 +119,11 @@
 .header__button:hover {
   background-color: $secondary-color-2;
   color: white;
+  text-decoration: none;
+}
+
+.header__button:active {
+  text-decoration: none;
 }
 
 .header__search::placeholder {
@@ -122,8 +140,17 @@
     width: 2.5rem;
     height: 2.5rem;
     margin-top: 1.5rem;
+    margin-right: 1.5rem;
     position: absolute;
     top: 0rem;
     right: 0rem;
   }
+
+  @include desktop {
+    margin-right: 2rem;
+  }
+}
+
+.icon {
+  padding-left: 1rem;
 }
