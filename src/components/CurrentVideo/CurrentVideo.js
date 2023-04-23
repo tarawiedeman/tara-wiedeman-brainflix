@@ -35,11 +35,12 @@ function CurrentVideo({ currentVideo }) {
                 className="main_videoviews--image"
                 src={ViewsImage}
                 width="25rem"
+                
               />
               <div>{currentVideo.views}</div>
             </div>
             <div className="main__videolikes">
-              <img className="main_videolikes--image" src={LikesImage} />
+              <img className="main_videolikes--image" src={LikesImage} width="22rem"/>
               <div>{currentVideo.likes} </div>
             </div>
           </div>

@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const BASE_URL = "https://project-2-api.herokuapp.com/videos/";
-const apiKey = "fabe5d3e-7822-47e1-a3f9-b1a93a8deb7d";
+const baseURL=process.env.REACT_APP_BASE_URL;
 
 function Home() {
   const { id } = useParams();
@@ -19,13 +18,13 @@ function Home() {
   useEffect(() => {
     setError(null);
     axios
-      .get(`${BASE_URL}?api_key=${apiKey}`)
+      .get(`${baseURL}`)
 
       .then((response) => {
         let videos = [];
         console.log(response.data);
         videos = response.data;
-        setVideos(response.data);
+        setVideos(videos);
       })
       .catch((e) => {
         setError(e.response.data.message);
@@ -38,7 +37,7 @@ function Home() {
     if (vidID) {
       setError(null);
       axios
-        .get(`${BASE_URL}${vidID}?api_key=${apiKey}`)
+        .get(`${baseURL}${vidID}`)
 
         .then((response) => {
           console.log(response.data);

@@ -2,6 +2,22 @@
 
 @use "../../styles/partials/variables" as *;
 
+a:link{
+text-decoration: none;
+}
+
+a:visited{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+a:active{
+  text-decoration: none;
+}
+
 .header {
   background-color: $primary-color-4;
   display: flex;
@@ -9,6 +25,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   border-bottom: 1px solid $secondary-color-3;
+  align-items: center;
 
   @include tablet {
     display: flex;
@@ -80,17 +97,18 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: 5rem;
+    gap:29%;
     background-color: $primary-color-2;
     color: $primary-color-4;
     font-weight: 700;
     font-family: Avenir Next;
     border: none;
     height: 2.5rem;
-    width: 100%;
+    width: 18rem;
     border-radius: 0.25rem;
     margin-bottom: 1rem;
     padding: 0.25rem;
+    padding-right:1rem;
 
     @include tablet {
       margin-top: 1.5rem;
@@ -103,6 +121,7 @@
 
     @include desktop {
       margin-right: 5rem;
+     
     }
   }
 
@@ -113,6 +132,7 @@
   &__container {
     display: flex;
     flex-direction: row;
+    justify-content:center;
   }
 }
 
@@ -128,6 +148,14 @@
 
 .header__search::placeholder {
   text-indent: 1.063rem;
+}
+
+input{
+  text-indent:1.25rem;
+}
+
+input:focus{
+  border:0.125rem solid $primary-color-2; 
 }
 
 .avatar {
@@ -151,6 +179,3 @@
   }
 }
 
-.icon {
-  padding-left: 1rem;
-}
