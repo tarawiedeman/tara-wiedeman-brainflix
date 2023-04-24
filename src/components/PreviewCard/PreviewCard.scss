@@ -4,9 +4,6 @@
 
 .video {
   @include desktop {
-    // position:absolute;
-    // right:0rem;
-    // top:30%;
   }
 
   &__previewcard {
