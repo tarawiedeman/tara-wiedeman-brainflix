@@ -2,19 +2,19 @@
 
 @use "../../styles/partials/variables" as *;
 
-a:link{
-text-decoration: none;
-}
-
-a:visited{
+a:link {
   text-decoration: none;
 }
 
-a:hover{
+a:visited {
   text-decoration: none;
 }
 
-a:active{
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
   text-decoration: none;
 }
 
@@ -97,7 +97,7 @@ a:active{
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap:29%;
+    gap: 29%;
     background-color: $primary-color-2;
     color: $primary-color-4;
     font-weight: 700;
@@ -108,7 +108,7 @@ a:active{
     border-radius: 0.25rem;
     margin-bottom: 1rem;
     padding: 0.25rem;
-    padding-right:1rem;
+    padding-right: 1rem;
 
     @include tablet {
       margin-top: 1.5rem;
@@ -121,7 +121,6 @@ a:active{
 
     @include desktop {
       margin-right: 5rem;
-     
     }
   }
 
@@ -132,7 +131,7 @@ a:active{
   &__container {
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content: center;
   }
 }
 
@@ -150,12 +149,12 @@ a:active{
   text-indent: 1.063rem;
 }
 
-input{
-  text-indent:1.25rem;
+input {
+  text-indent: 1.25rem;
 }
 
-input:focus{
-  border:0.125rem solid $primary-color-2; 
+input:focus {
+  border: 0.125rem solid $primary-color-2;
 }
 
 .avatar {
@@ -178,4 +177,3 @@ input:focus{
     margin-right: 2rem;
   }
 }
-

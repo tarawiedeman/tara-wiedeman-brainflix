@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const baseURL=process.env.REACT_APP_BASE_URL;
+const baseURL = process.env.REACT_APP_BASE_URL;
 
 function Home() {
   const { id } = useParams();
@@ -22,7 +22,6 @@ function Home() {
 
       .then((response) => {
         let videos = [];
-        console.log(response.data);
         videos = response.data;
         setVideos(videos);
       })
@@ -40,7 +39,6 @@ function Home() {
         .get(`${baseURL}${vidID}`)
 
         .then((response) => {
-          console.log(response.data);
           setVideoDetails(response.data);
         })
         .catch((e) => {
@@ -67,14 +65,17 @@ function Home() {
 
       <div className="previewvideos__container">
         <h3 className="video__header">NEXT VIDEOS</h3>
+
         {videos.map((video) => {
-          return (
-            <PreviewCard
-              video={video}
-              setVideoDetails={setVideoDetails}
-              key={video.id}
-            />
-          );
+          if (video.id !== currentVideo.id) {
+            return (
+              <PreviewCard
+                video={video}
+                setVideoDetails={setVideoDetails}
+                key={video.id}
+              />
+            );
+          }
         })}
       </div>
     </div>
@@ -82,6 +83,3 @@ function Home() {
 }
 
 export default Home;
-
-//use effect helps us only run the api request once our component renders
-//use state allows us to modify the component once we have the data from the api
